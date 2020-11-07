@@ -1,0 +1,23 @@
+#main{
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+    min-height: 100px;
+}
+.search_form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 40px;
+    
+}
+.search_bar{
+    width: 500px;
+    height: 38px;
+    margin-right: 10px;
+}
+.recipes{
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+}
