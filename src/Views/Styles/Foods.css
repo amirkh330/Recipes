@@ -1,0 +1,20 @@
+.recipes {
+    width: 100%;
+    display: inline-flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    text-align: center;
+    padding-top: 7%;
+    position: absolute;
+    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
+}
+@media (max-width: 576px) {
+    .recipes {
+        padding-top: 30%;
+    }
+}
+@media (max-width: 768px) {
+    .recipes {
+        padding-top: 28%;
+    }
+}

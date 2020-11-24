@@ -1,23 +1,18 @@
-#main{
-    background-image: linear-gradient(to top, #fbc2eb 0%, #a6c1ee 100%);
-    min-height: 100px;
+body {
+    margin: 0;
+    padding: 0;
 }
-.search_form{
+.spin {
     display: flex;
-    align-items: center;
     justify-content: center;
-    padding-top: 40px;
-    
-}
-.search_bar{
-    width: 500px;
-    height: 38px;
-    margin-right: 10px;
-}
-.recipes{
-    display: flex;
     align-items: center;
-    flex-wrap: wrap;
-    justify-content: space-around;
-    
+    height: 100vh;
+    width: 100vw;
+    background: rgba(255, 255, 255, 0.5);
+    position: absolute;
+    z-index: 1;
 }
+
+@import "Search.css";
+@import "Foods.css";
+@import "Recipe.css";

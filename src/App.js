@@ -6,9 +6,7 @@ import "./Views/Styles/App.css";
 const App = () => {
     return (
         <>
-            <div id="main">
-                <Main />
-            </div>
+            <Main/>
         </>
     );
 };

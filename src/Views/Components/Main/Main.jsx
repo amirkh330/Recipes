@@ -2,35 +2,32 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import SearchInput from "./SearchInput";
 import Foods from "./Foods";
-
+import { Spinner } from "react-bootstrap";
 
 const Main = () => {
     const [recipes, setRecipe] = useState([]);
     const [search, setSearch] = useState("");
     const [query, setQuery] = useState("chicken");
+    const [loading, setLoading] = useState(false);
 
     useEffect(() => {
         const request = async () => {
-            const app_Key = "26bdfef52e1642d1db5646aeb23c9251";
-            const app_Id = "08a733f4";
-            const request = await axios.get(
-                `https://api.edamam.com/search?q=${query}&app_id=${app_Id}&app_key=${app_Key}`
-            );
-            const data = request.data.hits;
-            setRecipe(data);
+            setLoading(true);
+            try {
+                const app_Key = "26bdfef52e1642d1db5646aeb23c9251";
+                const app_Id = "08a733f4";
+                const request = await axios.get(
+                    `https://api.edamam.com/search?q=${query}&app_id=${app_Id}&app_key=${app_Key}`
+                );
+                const data = request.data.hits;
+                setRecipe(data);
+                setLoading(false);
+            } catch (e) {
+                setLoading(true);
+            }
         };
         request();
     }, [query]);
-
-    // const request = async () => {
-    //     const app_Key = "26bdfef52e1642d1db5646aeb23c9251";
-    //     const app_Id = "08a733f4";
-    //     const request = await axios.get(
-    //         `https://api.edamam.com/search?q=${query}&app_id=${app_Id}&app_key=${app_Key}`
-    //     );
-    //     const data = request.data.hits;
-    //     setRecipe(data);
-    // };
 
     const handleSubmite = (e) => {
         e.preventDefault();
@@ -40,17 +37,24 @@ const Main = () => {
         setSearch(e.target.value);
     };
 
+    console.log(loading);
     return (
         <>
-            <SearchInput
-                onSubmit={handleSubmite}
-                onChange={handleChange}
-                value={search}
-            />
-
-            
-
-            <Foods recipes={recipes} />
+            <div className="main">
+                <SearchInput
+                    onSubmit={handleSubmite}
+                    onChange={handleChange}
+                    value={search}
+                />
+                {loading === true ? (
+                    <div className="spin">
+                        <Spinner animation="border" role="status">
+                            <span className="sr-only">Loading...</span>
+                        </Spinner>
+                    </div>
+                ) : null}
+                <Foods recipes={recipes} />
+            </div>
         </>
     );
 };

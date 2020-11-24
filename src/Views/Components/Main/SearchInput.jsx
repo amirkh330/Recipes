@@ -1,34 +1,27 @@
 import React from "react";
-import Typed from "react-typed";
 
 const SearchInput = ({ onSubmit, onChange, value }) => {
     return (
         <>
-            <form className="search_form" onSubmit={onSubmit}>
-                <Typed
-                    strings={[
-                        "Search for Foods",
-                        "Search for Vegetables",
-                        "Search for Fruits",
-                        "Search ...",
-                    ]}
-                    typeSpeed={100}
-                    backSpeed={100}
-                    attr="placeholder"
-                    // loop
-                >
+            <div className="search_form ">
+                <h2 className="header">Amir Food ;)</h2>
+                <div className="inp">
+
                     <input
-                        className="search_bar"
+                        className="search_bar col-10"
                         value={value}
                         onChange={onChange}
                         type="text"
                     />
-                </Typed>
-
-                <button type="submit" className=" btn btn-warning">
-                    Search
-                </button>
-            </form>
+                    <button
+                        className=" btn btn-warning search_button "
+                        type="submit"
+                        onClick={onSubmit}
+                    >
+                        Search
+                    </button>
+                </div>
+            </div>
         </>
     );
 };

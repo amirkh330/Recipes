@@ -1,5 +1,5 @@
 {
-  "homepage":"http://amirkh330.github.io/Recipes",
+  "homepage": "http://amirkh330.github.io/Recipes",
   "name": "one",
   "version": "0.1.0",
   "private": true,
@@ -10,8 +10,10 @@
     "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "react": "^17.0.1",
+    "react-bootstrap": "^1.4.0",
     "react-dom": "^17.0.1",
     "react-loading": "^2.0.3",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.0",
     "react-typed": "^1.2.0",
     "scss": "^0.2.4",
@@ -20,7 +22,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-"deploy": "gh-pages -d build",gi
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
